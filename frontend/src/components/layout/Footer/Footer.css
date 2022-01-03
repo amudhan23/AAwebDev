@@ -3,12 +3,12 @@
     padding: 4vmax;
     color:ivory;
     background-color: #121212;
-    height: 35vh;
+    height: 20vmax;
     font-size: 1.5rem;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    position: absolute;
+    position: relative;
     width: 100%;
     bottom:0;
 }
@@ -76,8 +76,19 @@ h4{
     .grid{
         justify-content: flex-start;
     }
+    
+}
+@media (max-width:599px) and (min-width:568px) {
+    
     #footer{
-        height: 70vmax;
+        height: 79vmax;
+    }
+    
+}
+@media (max-width:597px ) and (min-width:566px) {
+    #Footer{
+      height: 80vmax;
+        
     }
     
 }
@@ -87,6 +98,7 @@ h4{
       margin-left:3rem;
       
   }
+  
  
 }
 @media (max-width:769px ) and (min-width:600px) {
@@ -94,10 +106,36 @@ h4{
         margin-left:5rem;
         
     }
+    #footer{
+        height: 40vmax;
+    }
+   
 }
 
-@media (max-width:959px ) and (min-width:600px) {
+@media (max-width:959px ) and (min-width:770px) {
     #footer{
-        height: 40vh;
+        height: 37vmax;
+    }
+}
+
+@media (max-width:640px ) and (min-width:600px) {
+    #footer{
+        height: 50vmax;
+    }
+}
+
+
+@media (max-width:375px) {
+    .grid{
+        justify-content: flex-start;
+    }
+    #footer{
+        height: 70vmax;
+    }
+    
+}
+@media (max-width:415px ) and (min-width:376px) {
+    #footer{
+        height: 62vmax;
     }
 }

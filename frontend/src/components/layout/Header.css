@@ -266,10 +266,12 @@ hero section
   .logo,
   .fab-icons ul {
     height: 6rem;
+    margin-top: 2%;
   }
 
   .logo h2 {
     font-size: 2rem;
+    margin-top: 2%;
   }
 
   .fab-icons {
@@ -277,11 +279,13 @@ hero section
     display: flex;
     justify-self: end;
     align-items: center;
+    margin-top: 2%;
   }
 
   .fab-icons .hamburger-menu {
     display: block;
     font-size: 2.5rem;
+    margin-top: 2%;
   }
 
   /* hero section  */
@@ -302,6 +306,7 @@ hero section
 
   .logo,
   .fab-icons ul {
+    margin-top: 2%;
     height: 6rem;
   }
 
@@ -310,5 +315,6 @@ hero section
     display: flex;
     justify-self: end;
     align-items: center;
+    margin-top: 2%;
   }
 }

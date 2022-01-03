@@ -1,0 +1,185 @@
+.container{
+    height: 30vmax;
+    background-image:linear-gradient(0deg, rgba(128, 128, 128, 0.589), rgba(128, 128, 128, 0.589)),url(./home.png);
+    background-repeat:no-repeat;
+    background-size: cover;
+    width: 100%;
+    color: cornsilk;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1{
+    font-size: 5rem;
+
+}
+.button-grid{
+    display: flex;
+    justify-content: center;
+}
+#Button{
+    color: #F14A16;
+    font-size: 1.5rem;
+    border-width: thick;
+    border-color: #F14A16;
+    margin-top: 2vmax;
+    border-radius: 0;
+    
+}
+#Button:hover{
+    border-color: black;
+    color: black;
+    box-shadow:gray;
+}
+.container p{
+    font-size: 3rem;
+}
+.homeHeading{
+    text-align: center;
+    font-size: 1.4vmax;
+    border-bottom: 1px solid rgb(21, 21, 21, 0.5);
+    width: 20vmax;
+    padding: 1vmax;
+    margin: 5vmax auto;
+
+}
+
+.productCard{
+    width:16vmax;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: rgb(48,48,48);
+    margin:2vmax;
+    transition: all 0.5s;
+    padding-bottom: 0.5vmax;
+    box-shadow: 0 0 5px rgba(15, 15 ,15, 0.26);
+}
+.productCard> img{
+    width:16vmax;
+    height: 15vmax;
+    
+}
+
+.productCard> img:hover{
+    box-shadow: 0 0 2px 2px #6998AB;
+    
+    
+}
+.productCard > div{
+    margin:0.5vamx;
+    display: flex;
+    justify-content: flex-start;
+
+}
+.productCard > div > span {
+    margin:0.5vmax;
+    font: 300 0.7vmax "Roboto";
+
+}
+.productCard > p{
+    font-family: "Roboto";
+    font-size: 1.2vmax;
+    margin: 1vmax 0.5vmax;
+    margin-bottom: 0;
+}
+
+.productCard> span{
+    margin:0.5vmax 0.5vmax;
+    color: black;
+    font-size: 1.3vmax;
+    font-family: "Franklin Gothic Medium";
+}
+.productCard:hover{
+transform: scale(1.1);
+}
+.container-2{
+    display: flex;
+    margin: 2vmax auto;
+    width: 80vw;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 100%;
+}
+@media(max-width:600px){
+    .productCard>p{
+        font-size: 1.7vmax;
+    }
+    .productCard > div{
+        margin: 0max;
+        display: block;
+        
+    }
+    .productCard>span{
+        font-size: 1.5vmax;
+    }
+    .productCard> div > span {
+        margin: 0 0.5vmax;
+        font:300 1vmax "Roboto";
+    }
+}
+
+@media (min-width:700px)and (max-width:1055px){
+    h1{
+        font-size: 4rem;
+    }
+    .container p{
+        font-size: 2.5rem;
+    }
+    #Button{
+        font-size: 1rem;
+    }
+}
+
+@media (max-width:700px){
+    h1{
+        font-size: 3.7rem;
+    }
+    .container p{
+        font-size: 1.8rem;
+    }
+    #Button{
+        font-size: 1rem;
+    }
+}
+@media (min-width:517px) and (max-width:676px){
+    h1{
+        font-size: 3rem;
+    }
+    .container p{
+        font-size: 1.5rem;
+    }
+    #Button{
+        font-size: 0.8rem;
+        border-width: medium;
+    }
+    
+}
+
+@media (max-width:516px)and (min-width:431px){
+    h1{
+        font-size: 2.5rem;
+    }
+    .container p{
+        font-size: 2rem;
+    }
+    #Button{
+        font-size: 0.7rem;
+        border-width: medium;
+    }
+}
+
+@media (max-width:430px){
+    
+    h1{
+        font-size: 2rem;
+    }
+    .container p{
+        font-size: 1.7em;
+    }
+    #Button{
+        font-size: 0.6rem;
+        border-width: medium;
+    }
+}
