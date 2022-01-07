@@ -64,9 +64,9 @@ const Header = () => {
 
           {/* hamburget menu start  */}
           <div className="hamburger-menu">
-            <a href="/menu" onClick={() => setShowMediaIcons(!showMediaIcons)}>
+            <span  onClick={() => setShowMediaIcons(!showMediaIcons)}>
               <FontAwesomeIcon icon={faBars} className="ham-icons"/>
-            </a>
+            </span>
           </div>
         </div>
 

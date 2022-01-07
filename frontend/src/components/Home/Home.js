@@ -3,7 +3,7 @@ import React, { Fragment,useEffect } from 'react'
 import { Button, Grid } from "@material-ui/core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import{faArrowDown} from "@fortawesome/free-solid-svg-icons";
-import Product from "./Product.js";
+import ProductCard from "./ProductCard.js";
 import MetaData from "../layout/MetaData";
 import { clearErrors, getProduct } from "../../actions/productAction";
 import { useSelector, useDispatch } from "react-redux";
@@ -57,7 +57,7 @@ const Home = () => {
     
                 <div className="container-2" id="container">
                              
-                        {products && products.map((product) => <Product product={product}/>)}
+                        {products && products.map((product) => <ProductCard product={product}/>)}
                     </div>
                    
     

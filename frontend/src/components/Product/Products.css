@@ -1,0 +1,26 @@
+.productsHeading {
+    margin: 2vmax auto;
+    width: 15vw;
+    border-bottom: 1px solid #040303;
+    padding: 2vmax;
+    color: #040303;
+    font: 500 1.9vmax "Jost";
+    text-align: center;
+    animation: 1s ease-out 0s 1 slideInLeft;
+  }
+  
+  .products {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 5vmax;
+    justify-content: center;
+    min-height: 30vh;
+  }
+  @keyframes slideInLeft {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
