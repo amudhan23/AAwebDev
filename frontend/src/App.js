@@ -5,7 +5,8 @@ import {Routes} from 'react-router-dom'
 import Footer from './components/layout/Footer/Footer'
 import WebFont from "webfontloader";
 import React from "react";
-import Home from "./components/Home/Home.js"
+import Home from "./components/Home/Home.js";
+import ProductDetails from "./components/Product/ProductDetails.js";
 
 
 function App() {
@@ -14,14 +15,18 @@ function App() {
 React.useEffect(() => {
   WebFont.load({
     google:{
-      families:["Roboto", "Droid Sans", "Chilanka", "Franklin Gothic Medium"]
+      families:["Roboto", "Droid Sans", "Chilanka", "Franklin Gothic Medium", "Jost"]
     }
   })
 }, []);
   return (
    <Router>
    <Header/>
-       <Routes> <Route exact={true} path="/" element={<Home/>}/> </Routes>
+       <Routes> 
+         <Route exact={true} path="/" element={<Home/>}/>
+         <Route exact={true} path="/product/:id" element={<ProductDetails />}/>
+        
+       </Routes>
        
    <Footer/>
 

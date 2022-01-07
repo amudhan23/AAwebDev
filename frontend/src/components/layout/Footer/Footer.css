@@ -1,5 +1,5 @@
 #footer{
-    margin-top:10vmax;
+    margin-top:4vmax;
     padding: 4vmax;
     color:ivory;
     background-color: #121212;
@@ -125,17 +125,28 @@ h4{
 }
 
 
-@media (max-width:375px) {
+@media (max-width:324px) {
     .grid{
         justify-content: flex-start;
     }
     #footer{
-        height: 70vmax;
+        height: 80vmax;
     }
     
 }
+@media (max-width:375px ) and (min-width:325px) {
+    #footer{
+        height: 90vmax;
+    }
+}
+
+@media (max-width:565px ) and (min-width:414px) {
+    #footer{
+        height: 88vmax;
+    }
+}
 @media (max-width:415px ) and (min-width:376px) {
     #footer{
-        height: 62vmax;
+        height: 90vmax;
     }
 }
