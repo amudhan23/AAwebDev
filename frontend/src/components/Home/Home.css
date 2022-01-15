@@ -8,12 +8,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    
 }
+
+
 
 h1{
     font-size: 5rem;
+    animation: 0.5s ease-out 0s 1 slideInUp;
 
 }
+
 .button-grid{
     display: flex;
     justify-content: center;
@@ -25,7 +30,7 @@ h1{
     border-color: #F14A16;
     margin-top: 2vmax;
     border-radius: 0;
-    
+    animation: 0.5s ease-out 0s 1 slideInUp;
 }
 #Button:hover{
     border-color: black;
@@ -34,7 +39,17 @@ h1{
 }
 .container p{
     font-size: 3rem;
+    animation: 0.5s ease-out 0s 1 slideInUp;
 }
+
+@keyframes slideInUp {
+    0% {
+      transform: translateY(100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
 .homeHeading{
     text-align: center;
     font-size: 1.4vmax;

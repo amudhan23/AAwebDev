@@ -8,6 +8,7 @@ import ReactStars from "react-rating-stars-component";
 import ReviewCard from "./ReviewCard.js";
 import Loader from "../layout/Loader/Loader";
 import {useAlert} from "react-alert"
+import MetaData from "../layout/MetaData";
 
 const ProductDetails = () => {
 
@@ -43,6 +44,8 @@ const ProductDetails = () => {
   return (
   <Fragment>
     {loading? <Loader/>: (  <Fragment>
+      
+      <MetaData title={`${product.name}-Aesthetica`}/>
       <div className="ProductDetails">
         <div>
           <span> 

@@ -47,7 +47,7 @@ const Header = () => {
             </li>
             <li>
               <a
-                href="/signup"
+                href="/login"
                 className="icons">
                 <FontAwesomeIcon icon={faUser}/>
               </a>

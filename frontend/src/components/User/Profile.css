@@ -1,0 +1,179 @@
+
+.profile {
+    background: linear-gradient(-45deg, #FFCBCB, #FFFDDE, #D9D7F1, #E7FBBE);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+
+.profileContainer {
+  background: linear-gradient(-45deg, #FFCBCB, #FFFDDE, #D9D7F1, #E7FBBE);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+
+@keyframes gradient {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
+}
+.profileContainer {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    top: 0%;
+    left: 0%;
+    max-width: 100%;
+    background-color: white;
+  }
+  
+  .profileContainer > div {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    max-width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .profileContainer > div:first-child > h1 {
+    color: #4E9F3D;
+    font: 500 2.2vmax "Jost";
+    transform: translateX(-10vmax) translateY(-2vmax);
+  }
+  
+  .profileContainer > div:first-child > img {
+    width: 20vmax;
+    border-radius: 100%;
+    border:solid 2px rgb(0 0 0 / 52%);
+    transition: all 0.5s;
+  }
+  
+  .profileContainer > div:first-child > img:hover {
+    transform: scale(1.05);
+  }
+  
+  .profileContainer > div:first-child > a {
+    border: none;
+    background-color: #D77FA1;
+    font: 400 1.2vmax "Jost";
+    color: white;
+    text-decoration: none;
+    padding: 0.5vmax;
+    width: 30%;
+    margin: 4vmax;
+    text-align: center;
+    transition: all 0.5s;
+  }
+  
+  .profileContainer > div:first-child > a:hover {
+    background-color: #97526c;
+  }
+  
+  .profileContainer > div:last-child {
+    justify-content: space-evenly;
+    align-items: flex-start;
+    padding: 5vmax;
+    box-sizing: border-box;
+  }
+  
+  .profileContainer > div:last-child > div > h4 {
+    color: black;
+    font: 400 1.3vmax "Jost";
+  }
+  
+  .profileContainer > div:last-child > div > p {
+    color: rgba(0 0 0 / 66%);
+    font: 400 1.4vmax Jost;
+    margin: 0.2vmax;
+  }
+  
+  .profileContainer > div:last-child > div:last-child {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+  }
+  
+  .profileContainer > div:last-child > div:last-child > a {
+    border: none;
+    background-color: rgb(68, 68, 68);
+    font: 400 1.3vmax "Jost";
+    color: white;
+    text-decoration: none;
+    padding: 0.5vmax;
+    text-align: center;
+    transition: all 0.5s;
+    margin: 1vmax 0;
+  }
+  
+  .profileContainer > div:last-child > div:last-child > a:hover {
+    background-color: rgb(31, 31, 31);
+  }
+  .button{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+  .btn {
+      width:50%;
+    -webkit-border-radius: 4;
+    -moz-border-radius: 4;
+    border-radius: 4px;
+    font-family: "Jost";
+    color: #544654;
+    font-size: 12px;
+    background: #eaeced;
+    padding: 6px 15px 6px 15px;
+    border: solid #b2b6b8 3px;
+    text-decoration: none;
+  }
+  
+  .btn:hover {
+    background: #d6d6d6;
+    text-decoration: none;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .profileContainer {
+      flex-direction: column;
+    }
+  
+    .profileContainer > div:first-child > h1 {
+      font: 500 3.2vmax "Jost";
+      transform: translateY(-2vmax);
+    }
+  
+    .profileContainer > div:first-child > a {
+      font: 400 1.7vmax "Jost";
+      padding: 1vmax;
+    }
+  
+    .profileContainer > div:last-child {
+      text-align: center;
+      align-items: center;
+    }
+  
+    .profileContainer > div:last-child > div > h4 {
+      font: 400 2.5vmax "Jost";
+    }
+  
+    .profileContainer > div:last-child > div > p {
+      font: 400 2vmax Jost;
+      margin: 0.5vmax 0;
+    }
+  
+    .profileContainer > div:last-child > div:last-child > a {
+      font: 400 1.8vmax "Jost";
+      padding: 1vmax;
+      margin: 2vmax 0;
+    }
+  }

@@ -12,7 +12,7 @@
   .products {
     display: flex;
     flex-wrap: wrap;
-    padding: 0 5vmax;
+    padding: 0 3vmax;
     justify-content: center;
     min-height: 30vh;
   }
@@ -24,3 +24,144 @@
       transform: translateX(0);
     }
   }
+
+  .paginationBox {
+    display: flex;
+    justify-content: center;
+    margin: 6vmax;
+  }
+  .pagination {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+  }
+
+  
+.page-item {
+  background-color: rgb(255, 255, 255);
+  list-style: none;
+  border: 1px solid rgba(0, 0, 0, 0.178);
+  border-radius: 50%;
+  margin: 3px;
+  padding: 1vmax 1.5vmax;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.page-item:first-child {
+  border-radius: 50%;
+}
+
+.page-item:last-child {
+  border-radius: 50%;
+}
+.page-link {
+  text-decoration: none;
+  font: 300 0.7vmax "Jost";
+  color: #121212;
+  transition: all 0.3s;
+}
+
+.page-item:hover {
+  background-color: rgb(230, 230, 230);
+}
+
+.page-item:hover .page-link {
+  color: rgb(0, 0, 0);
+}
+
+.pageItemActive {
+  background-color:#D77FA1;
+}
+
+.pageLinkActive {
+  color: white;
+}
+
+.filterBox {
+  width: 12vmax;
+  position: absolute;
+  top: 10vmax;
+  left: 1vmax;
+  cursor: pointer;
+  background-color:#F7F7F7;
+  animation: 0.5s ease-out 0s 1 slideInLeft;
+  color:#8E806A;
+ 
+ 
+}
+
+.slider{
+  width: 11vmax;
+}
+.filter{
+  font-size:1vmax;
+  
+  margin-top:3px ;
+
+}
+#filterText{
+  font-size:1.5vmax;
+  font:"Jost";
+  margin-top:3px ;
+}
+.filterBoxIcon{
+  background-color: white;
+  width:6vmax;
+  position: absolute;
+  top: 10vmax;
+  cursor: pointer;
+  border: solid;
+    border-width: 1px;
+    color:#8E806A;
+    border-radius: 3px;
+ 
+
+}
+.filterBoxIcon:hover{
+  color: #4E9F3D;
+}
+.filterBoxIcon .categoryBox{
+  display: none;
+}
+.filterBoxIcon .slider{
+  display: none;
+}
+.filterBoxIcon .CategoryText{
+  display: none;
+}
+
+.categoryBox {
+  padding: 0%;
+}
+
+.category-link {
+  list-style: none;
+  color: rgba(0, 0, 0, 0.61);
+  font: 400 1.2vmax "Roboto";
+  margin: 0.4vmax;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.category-link:hover {
+  color: tomato;
+}
+@media screen and (max-width: 600px) {
+  .filterBoxIcon{
+    font-size: 1.7vmax;
+  }
+  
+  .page-link {
+    font: 300 1.7vmax "Jost";
+  }
+  .category-link {
+    font: 500 1.8vmax "Jost";
+  }
+}
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}

@@ -1,15 +1,14 @@
 import "./Home.css";
-import React, { Fragment,useEffect } from 'react'
-import { Button, Grid } from "@material-ui/core";
+import React, { Fragment, useEffect } from "react";
+import { Button, Grid, Slider } from "@material-ui/core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import{faArrowDown} from "@fortawesome/free-solid-svg-icons";
+import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
 import ProductCard from "./ProductCard.js";
 import MetaData from "../layout/MetaData";
 import { clearErrors, getProduct } from "../../actions/productAction";
 import { useSelector, useDispatch } from "react-redux";
 import Loader from "../layout/Loader/Loader";
-import {useAlert} from "react-alert";
-
+import { useAlert } from "react-alert";
 
 // const product={
 //     name: "Mens Watch",
@@ -19,51 +18,58 @@ import {useAlert} from "react-alert";
 // };
 
 const Home = () => {
-    const alert = useAlert();
-    const dispatch = useDispatch();
-    const {loading, error, products,productsCount} = useSelector(
-        (state) => state.products
-    );
+  const alert = useAlert();
+  const dispatch = useDispatch();
+  const { loading, error, products, productsCount } = useSelector(
+    (state) => state.products
+  );
 
-//eror part has to be done
-    useEffect(() => {
-      if(error){
-        alert.error(error);
-        dispatch(clearErrors());
-      }
+  //eror part has to be done
+  useEffect(() => {
+    if (error) {
+      alert.error(error);
+      dispatch(clearErrors());
+    }
 
-           dispatch(getProduct());
+    dispatch(getProduct());
+  }, [dispatch, error, alert]);
 
-    }, [dispatch,error,alert]);
-
-
-    return (
+  return (
+    <Fragment>
+      {loading ? (
+        <Loader />
+      ) : (
         <Fragment>
-            {loading?(<Loader/>):
-            (<Fragment>
-                <MetaData title="Aesthetica Head"/>
-                <div className="container">
-                   <Grid>
-                   <Grid item xs={12} sm={12} md={12}> <h1>Welcome to Aesthetica Head</h1></Grid>
-                    <Grid item xs={12} sm={12} md={12}><p>
-                        An Ecommerce website.
-                    </p></Grid>
-                    <Grid item xs={12} sm={12} md={12} className="button-grid"><a href="#container"><Button variant="outlined" id='Button'>Scroll <FontAwesomeIcon icon={faArrowDown}/></Button></a></Grid>
-                    </Grid>
-                    
-                    
-                </div>
-                <h2 className="homeHeading">Feature Products</h2>
-    
-                <div className="container-2" id="container">
-                             
-                        {products && products.map((product) => <ProductCard product={product}/>)}
-                    </div>
-                   
-    
-            </Fragment>)}
+          <MetaData title="Aesthetica Head" />
+          <div className="container">
+            <Grid>
+              <Grid item xs={12} sm={12} md={12}>
+                {" "}
+                <h1>Welcome to Aesthetica Head</h1>
+              </Grid>
+              <Grid item xs={12} sm={12} md={12}>
+                <p>An Ecommerce website.</p>
+              </Grid>
+              <Grid item xs={12} sm={12} md={12} className="button-grid">
+                <a href="#container">
+                  <Button variant="outlined" id="Button">
+                    Scroll <FontAwesomeIcon icon={faArrowDown} />
+                  </Button>
+                </a>
+              </Grid>
+            </Grid>
+          </div>
+          <h2 className="homeHeading">Feature Products</h2>
+
+          <div className="container-2" id="container">
+            {products &&
+              products.map((product) => <ProductCard product={product} />)}
+          </div>
+         
         </Fragment>
-    )
-}
+      )}
+    </Fragment>
+  );
+};
 
 export default Home;
