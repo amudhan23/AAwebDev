@@ -26,9 +26,12 @@
   }
   
   .CarouselImage {
-    width:20vmax;
+    width:fit-content;
    
   }
+ 
+ 
+ 
   
   .detailsBlock-1 > h2 {
     color: rgb(54, 54, 54);
@@ -94,7 +97,7 @@
     color: rgba(0, 0, 0, 0.74);
   }
   
-  .detailsBlock-3-1 > button:last-child {
+  .detailsBlock-3-1 > button:nth-last-child(2) {
     border-color: hsl(14, 89%, 52%);
     cursor: pointer;
     color:black;
@@ -106,7 +109,19 @@
     margin: 1vmax;
     outline: none;
   }
+  .regular-heart{
+    font-size: 2vmax;
+    margin:auto;
+    
+  }
+  .solid-heart{
+    color: rgb(214, 16, 49);
+    font-size: 2vmax;
+    margin:auto;
   
+  }
+
+
   .detailsBlock-3-1 > button:last-child:hover {
     background-color: #00000012;
   }
@@ -250,7 +265,7 @@
   
     .detailsBlock-3-1-1 > input {
       padding: 1.5vmax;
-      width: 3vmax;
+      width: 4vmax;
       font: 400 1.8vmax "Roboto";
     }
   

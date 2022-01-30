@@ -28,7 +28,7 @@ const Products = () => {
   const [showFilter, setShowFilter] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [category, setCategory] = useState("");
-  const [price, setPrice] = useState([0, 25000]);
+  const [price, setPrice] = useState([0, 250000]);
 
   const {
     products,
@@ -80,7 +80,7 @@ let count = filteredProductsCount;
               valueLabelDisplay="auto"
               aria-labelledby="range-slider"
               min={0}
-              max={25000}
+              max={250000}
               className="slider"
             />
             <Typography className="CategoryText">Categories</Typography>

@@ -23,11 +23,12 @@ exports.registerUser = catchAsyncErrors(async (req, res, next) => {
     avatar: {
       public_id: myCloud.public_id,
       url: myCloud.secure_url,
-      // public_id:" dscvryjas",
-      // url: "CLOUDINARY_URL=cloudinary://891462797679471:t7zdFGhMPy_PmESD0xqP_cHU38s@dscvryjas",
+      
     },
   });
 
+
+ 
   sendToken(user, 201, res);
 });
 
@@ -82,11 +83,12 @@ exports.forgotPassword = catchAsyncErrors(async (req, res, next) => {
 
   await user.save({ validateBeforeSave: false });
 
-  const resetPasswordUrl = `${req.protocol}://${req.get(
-    "host"
-  )}/password/reset/${resetToken}`;
+  // const resetPasswordUrl = `${req.protocol}://${req.get(
+  //   "host"
+  // )}/password/reset/${resetToken}`;
+  const resetPasswordUrl = `${process.env.FRONTEND_URL}/password/reset/${resetToken}`;
 
-  const message = `Your password reset token is :- \n\n ${resetPasswordUrl} \n\nIf you have not requested this email then, please ignore it.`;
+  const message = `Your password reset token is temp :- \n\n ${resetPasswordUrl} \n\nIf you have not requested this email then, please ignore it.`;
 
   try {
     await sendEmail({
@@ -194,11 +196,13 @@ exports.updateProfile = catchAsyncErrors(async (req, res, next) => {
       width: 150,
       crop: "scale",
     });
+    
 
     newUserData.avatar = {
       public_id: myCloud.public_id,
       url: myCloud.secure_url,
     };
+
   }
 
   const user = await User.findByIdAndUpdate(req.user.id, newUserData, {

@@ -15,8 +15,7 @@ import { useAlert } from "react-alert";
 //     image :[{url:"https://m.media-amazon.com/images/I/7194FJHAS0L._AC_UL1300_.jpg"}],
 //     price:"$200",
 //     _id:"XYZ",
-// };
-
+// }
 const Home = () => {
   const alert = useAlert();
   const dispatch = useDispatch();

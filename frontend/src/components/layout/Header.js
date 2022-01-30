@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import "./Header.css";
 import{FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faSearch, faUser, faShoppingCart, faBars} from '@fortawesome/free-solid-svg-icons'
-
+import {faSearch, faUser, faShoppingCart, faBars} from '@fortawesome/free-solid-svg-icons';
+import {useSelector} from "react-redux";
+import { faHeart as farHeart } from "@fortawesome/free-regular-svg-icons";
 // import { NavLink } from "react-router-dom";
 
 const Header = () => {
   const [showMediaIcons, setShowMediaIcons] = useState(false);
+  const {cartItems} = useSelector((state)=> state.cart);
   return (
     <>
       <nav className="main-nav">
@@ -47,6 +49,13 @@ const Header = () => {
             </li>
             <li>
               <a
+                href="/wishlist"
+                className="icons">
+                <FontAwesomeIcon icon={farHeart}/>
+              </a>
+            </li>
+            <li>
+              <a
                 href="/login"
                 className="icons">
                 <FontAwesomeIcon icon={faUser}/>
@@ -55,9 +64,9 @@ const Header = () => {
             <li>
               <a
                 href="/cart"
-                className="icons"
+                className={cartItems.length>0?"icons cart-icon": "icons cart-icon-display"}
                >
-                <FontAwesomeIcon icon={faShoppingCart}/>
+                <FontAwesomeIcon icon={faShoppingCart}/><p>{cartItems.length}</p>
               </a>
             </li>
           </ul>

@@ -18,6 +18,9 @@ const LoginSignup = () => {
   const navigate = useNavigate();
   const dispatch= useDispatch();
  const alert =useAlert();
+
+ 
+
  const { error, loading, isAuthenticated } = useSelector(
   (state) => state.user
 );
@@ -76,12 +79,17 @@ const LoginSignup = () => {
       setUser({ ...user, [e.target.name]: e.target.value });
     }
   };
+
+  
  
   useEffect(() => {
     if (error) {
       alert.error(error);
       dispatch(clearErrors());
     }
+
+  
+    
 
     if (isAuthenticated) {
       navigate("/account");
@@ -124,7 +132,7 @@ const LoginSignup = () => {
                 type="email"
                 placeholder="Email"
                 required
-                autoComplete="off"
+                
                 value={loginEmail}
                 onChange={(e) => setLoginEmail(e.target.value)}
               />

@@ -99,6 +99,12 @@
   margin-top:3px ;
 
 }
+.hide{
+  display: none;
+}
+.heart{
+  margin: auto;
+}
 #filterText{
   font-size:1.5vmax;
   font:"Jost";

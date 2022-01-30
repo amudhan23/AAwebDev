@@ -1,0 +1,64 @@
+.wishlistCard{
+    width:16vmax;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: rgb(48,48,48);
+    margin:2vmax;
+    transition: all 0.5s;
+    padding-bottom: 0.5vmax;
+    box-shadow: 0 0 5px rgba(15, 15 ,15, 0.26);
+}
+.wishlistImg{
+    width:16vmax;
+    height: 15vmax;
+    
+}
+
+.wishlistImg:hover{
+    box-shadow: 0 0 2px 2px #6998AB;
+    
+    
+}
+
+.wishlistpara{
+    font-family: "Roboto";
+    font-size: 1.2vmax;
+    margin: 1vmax 0.5vmax;
+    margin-bottom: 0;
+    align-items: center;
+    display: flex;
+    color: #121212;
+    justify-content: center;
+}
+.wishlistpara:hover{
+    color: tomato;
+}
+
+
+
+.wishlistCard> button{
+    
+    width: auto;
+    margin: 5px;
+    border: solid 2px #96CEB4;
+    border-radius: 5px;
+    height: 3vmax;
+    background: transparent;
+    color: #35858B;
+    font-size: 1.6vmax;
+
+}
+
+@media(max-width:600px){
+    .wishlistCard>p{
+        font-size: 1.7vmax;
+    }
+    .wishlistCard > div{
+        margin: 0max;
+        display: block;
+        
+    }
+   
+  
+}

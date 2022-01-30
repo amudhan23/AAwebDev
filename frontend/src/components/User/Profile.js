@@ -6,14 +6,17 @@ import { Link, useNavigate } from "react-router-dom";
 import "./Profile.css";
 import {useAlert} from "react-alert";
 import {logout} from "../../actions/userAction"
-
+// import {
+//   removeItemsFromWishlist,
+// } from "../../actions/wishlistAction";
 
 const Profile = () => {
     const navigate = useNavigate();
     const alert = useAlert();
     const dispatch = useDispatch();
     const { user, loading, isAuthenticated } = useSelector((state) => state.user);
-
+    // const { wishlistItems } = useSelector((state) => state.wishlist);
+   
     useEffect(() => {
       if (isAuthenticated === false) {
         navigate("/login");
@@ -21,12 +24,18 @@ const Profile = () => {
     }, [navigate, isAuthenticated]);
     
 const logoutUser = ()=> {
+
+  // wishlistItems.map((k, v) => deleteWishlistItems(k.product))
        dispatch(logout());
 
     alert.success("Logout Successfully");
-    
-   }
   
+   }
+  //  const deleteWishlistItems = (id) => {
+  //   dispatch(removeItemsFromWishlist(id));
+   
+  // };
+
     return (
       <Fragment>
         {loading ? (
@@ -67,6 +76,11 @@ const logoutUser = ()=> {
                 </div>
               </div>
               
+            </div>
+            <div className={user.role==='admin'?"display":"nodisplay"}>
+            <Link to= '/admin/dashboard'>
+                Dashboard
+            </Link>
             </div>
             <div className='button'>
             <button className='btn' onClick={logoutUser}>

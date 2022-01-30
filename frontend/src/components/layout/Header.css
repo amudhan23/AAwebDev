@@ -75,8 +75,37 @@ li {
 }
 
 .fab-icons ul li:first-child {
-  grid-column: 2/3;
+  grid-column: 1;
 }
+
+/* CART NUMBER */
+
+.cart-icon{
+  display: flex;
+  position: relative;
+  align-content: center;
+  margin-left:1vmax;
+}
+.cart-icon>p{
+  position: absolute;
+  width: 1.3vmax;
+  height: 1.3vmax;
+  right: -0.3vmax;
+  top: -0.9vmax;
+  border-radius: 50%;
+  background: #FFBCD1;
+  color: #fff;
+  box-sizing: border-box;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--main-color);
+}
+.cart-icon-display> p{
+ display: none;
+}
+
 
 /* ----------- Grid part ends ----------------- */
 
@@ -194,7 +223,10 @@ hero section
     transform-origin: top;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
       rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    
   }
+
+
 
   .mobile-menu-link ul {
     height: 20rem;
