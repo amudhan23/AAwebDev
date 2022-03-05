@@ -67,6 +67,13 @@ const navigate = useNavigate();
       minWidth: 150,
       flex: 0.3,
     },
+    {
+      field: "discount",
+      headerName: "Discount",
+      type: "number",
+      minWidth: 150,
+      flex: 0.3,
+    },
 
     {
       field: "price",
@@ -103,11 +110,13 @@ const navigate = useNavigate();
 
   products &&
     products.forEach((item) => {
+  
       rows.push({
         id: item._id,
         stock: item.Stock,
         price: item.price,
         name: item.name,
+        discount:item.Discount,
       });
     });
 

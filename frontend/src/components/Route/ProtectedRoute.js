@@ -5,7 +5,7 @@ const ProtectedRoute = () => {
     const { loading, isAuthenticated, user } = useSelector((state) => state.user);
     
     return isAuthenticated ? <Outlet /> : <Navigate to="/login" />;
-
+     
         // <Fragment>
         // {loading === false && (
         //   <Route

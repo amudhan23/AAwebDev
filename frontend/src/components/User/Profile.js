@@ -47,7 +47,7 @@ const logoutUser = ()=> {
             <div className="profileContainer">
               <div>
                 <h1>Hi {`${user.name}`} </h1>
-                <img src={user.avatar.url? user.avatar.url: "/Profile.png"} alt={user.name} />
+                <img src="/Profile.png" alt={user.name} />
                 <Link to="/me/update">Edit Profile</Link>
               </div>
               <div>
@@ -62,7 +62,7 @@ const logoutUser = ()=> {
                 </div>
                 <div>
                   <h4>Mobile Number</h4>
-                  <p>{user.phone}</p>
+                  <p>{user.mobile}</p>
                 </div>
                 <div>
                   <h4>Joined On</h4>
@@ -77,10 +77,10 @@ const logoutUser = ()=> {
               </div>
               
             </div>
-            <div className={user.role==='admin'?"display":"nodisplay"}>
-            <Link to= '/admin/dashboard'>
+            <div>
+            {user.role==="admin"?<Link to= '/admin/dashboard' className='display'>
                 Dashboard
-            </Link>
+            </Link>:null}
             </div>
             <div className='button'>
             <button className='btn' onClick={logoutUser}>

@@ -1,5 +1,5 @@
 import "./Home.css";
-import React, { Fragment, useEffect } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import { Button, Grid, Slider } from "@material-ui/core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
@@ -9,6 +9,9 @@ import { clearErrors, getProduct } from "../../actions/productAction";
 import { useSelector, useDispatch } from "react-redux";
 import Loader from "../layout/Loader/Loader";
 import { useAlert } from "react-alert";
+import CategoryCard from "./CategoryCard";
+import categories from "../Categories/Categories";
+import Carousel from "react-material-ui-carousel";
 
 // const product={
 //     name: "Mens Watch",
@@ -16,9 +19,20 @@ import { useAlert } from "react-alert";
 //     price:"$200",
 //     _id:"XYZ",
 // }
+
+// const categories = [
+//   "Electronics",
+//   "Footwear",
+//   "Bottom",
+//   "Tops",
+//   "Attire",
+//   "Camera",
+//   "SmartPhones",
+// ];
 const Home = () => {
   const alert = useAlert();
   const dispatch = useDispatch();
+
   const { loading, error, products, productsCount } = useSelector(
     (state) => state.products
   );
@@ -32,7 +46,15 @@ const Home = () => {
 
     dispatch(getProduct());
   }, [dispatch, error, alert]);
-
+// const option = {
+//   showArrows: false,
+//   showStatus: false,
+//   showThumbs:false,
+//   infiniteLoop:true,
+//   autoPlay:true,
+//   transitionTime:500,
+//   interval:2000,
+// }
   return (
     <Fragment>
       {loading ? (
@@ -56,6 +78,7 @@ const Home = () => {
                   </Button>
                 </a>
               </Grid>
+              ,{" "}
             </Grid>
           </div>
           <h2 className="homeHeading">Feature Products</h2>
@@ -64,6 +87,24 @@ const Home = () => {
             {products &&
               products.map((product) => <ProductCard product={product} />)}
           </div>
+          <div className="Carousel">
+          <Carousel autoPlay={true} indicators={false}>
+           
+            <img src = "/slider1.jpg" alt="carousel image" className="Carousel"/>
+            <img src="/slider2.jpg" alt="carousel image" className="Carousel"/>
+          </Carousel>
+          </div>
+          <h2 className="homeHeading"> Categories</h2>
+          <div className="container-2">
+            {categories.map((category) => (
+              <CategoryCard
+                key={category.name}
+                category={category.name}
+                img={category.img}
+              />
+            ))}
+          </div>
+        
          
         </Fragment>
       )}

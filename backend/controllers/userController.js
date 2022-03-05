@@ -13,6 +13,7 @@ exports.registerUser = catchAsyncErrors(async (req, res, next) => {
     width: 150,
     crop: "scale",
   });
+  const message = "Thanks for registering";
 
   const { name, email, password } = req.body;
 
@@ -27,7 +28,11 @@ exports.registerUser = catchAsyncErrors(async (req, res, next) => {
     },
   });
 
-
+// sendEmail({
+//   email: email,
+//   subject: `Aesthetica Head`,
+//   message,
+// });
  
   sendToken(user, 201, res);
 });
@@ -62,6 +67,8 @@ exports.logout = catchAsyncErrors(async (req, res, next) => {
   res.cookie("token", null, {
     expires: new Date(Date.now()),
     httpOnly: true,
+    // SameSite: None,
+    // Secure:true
   });
 
   res.status(200).json({
@@ -83,10 +90,10 @@ exports.forgotPassword = catchAsyncErrors(async (req, res, next) => {
 
   await user.save({ validateBeforeSave: false });
 
-  // const resetPasswordUrl = `${req.protocol}://${req.get(
-  //   "host"
-  // )}/password/reset/${resetToken}`;
-  const resetPasswordUrl = `${process.env.FRONTEND_URL}/password/reset/${resetToken}`;
+  const resetPasswordUrl = `${req.protocol}://${req.get(
+    "host"
+  )}/password/reset/${resetToken}`;
+  // const resetPasswordUrl = `${process.env.FRONTEND_URL}/password/reset/${resetToken}`;
 
   const message = `Your password reset token is temp :- \n\n ${resetPasswordUrl} \n\nIf you have not requested this email then, please ignore it.`;
 

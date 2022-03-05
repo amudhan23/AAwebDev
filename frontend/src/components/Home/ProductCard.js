@@ -11,6 +11,8 @@ const ProductCard = ({ product }) => {
     value: product.ratings,
     isHalf: true,
   };
+  let dis = product.Discount * product.price/100;
+  let finalprice = product.price- dis;
 
   return (
     <Link className="productCard" to={`/product/${product._id}`}>
@@ -20,7 +22,9 @@ const ProductCard = ({ product }) => {
       <div>
         <ReactStars {...options} className="stars" /> <span>({product.numOfReviews} reviews)</span>
       </div>
-      <span>{`₹${product.price}`}</span>
+      {product.Discount>1?<span>{`₹${finalprice}`} </span>:null}
+      {product.Discount>1?<span className="discount" style={{color:"green", fontSize:"1rem"}}>{`${product.Discount}% off`} </span>:null}
+      {product.Discount>1?null:<span>{`₹${product.price}`}</span>}
     </Link>
   );
 };

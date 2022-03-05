@@ -1,0 +1,23 @@
+.MuiStepConnector-line {
+    display: none !important;
+  }
+  
+  .MuiStepConnector-root {
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.349);
+  }
+  
+  .MuiStepConnector-active,
+  .MuiStepConnector-completed {
+    background-color: tomato;
+  }
+  #id {
+    font-size: 1rem ;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0.00938em;}
+    #id {
+        margin: 0;
+        background-color: transparent;
+    }

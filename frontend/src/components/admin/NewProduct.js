@@ -13,6 +13,8 @@ import AttachMoneyIcon from "@material-ui/icons/AttachMoney";
 import SideBar from "./Sidebar";
 import { NEW_PRODUCT_RESET } from "../../constants/productConstants";
 import { useNavigate } from "react-router-dom";
+// import categories from "../Categories/Categories";
+
 
 const NewProduct = () => {
   const dispatch = useDispatch();
@@ -26,6 +28,7 @@ const NewProduct = () => {
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
   const [Stock, setStock] = useState(0);
+  const [Discount, setDiscount] = useState(0);
   const [images, setImages] = useState([]);
   const [imagesPreview, setImagesPreview] = useState([]);
 
@@ -62,6 +65,7 @@ const NewProduct = () => {
     myForm.set("description", description);
     myForm.set("category", category);
     myForm.set("Stock", Stock);
+    myForm.set("Discount", Discount);
 
     images.forEach((image) => {
       myForm.append("images", image);
@@ -121,7 +125,15 @@ const NewProduct = () => {
                 onChange={(e) => setPrice(e.target.value)}
               />
             </div>
-
+            <div>
+              <AttachMoneyIcon />
+              <input
+                type="number"
+                placeholder="Discount"
+                required
+                onChange={(e) => setDiscount(e.target.value)}
+              />
+            </div>
             <div>
               <DescriptionIcon />
 

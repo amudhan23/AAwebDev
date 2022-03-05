@@ -36,6 +36,7 @@ const UpdateProduct = () => {
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
   const [Stock, setStock] = useState(0);
+  const [discount, setDiscount] = useState(0);
   const [images, setImages] = useState([]);
   const [oldImages, setOldImages] = useState([]);
   const [imagesPreview, setImagesPreview] = useState([]);
@@ -62,6 +63,7 @@ const UpdateProduct = () => {
       setCategory(product.category);
       setStock(product.Stock);
       setOldImages(product.images);
+      setDiscount(product.Discount)
     }
     if (error) {
       alert.error(error);
@@ -96,9 +98,11 @@ const UpdateProduct = () => {
 
     myForm.set("name", name);
     myForm.set("price", price);
+    myForm.set("Discount", discount);
     myForm.set("description", description);
     myForm.set("category", category);
     myForm.set("Stock", Stock);
+   
 
     images.forEach((image) => {
       myForm.append("images", image);
@@ -158,6 +162,16 @@ const UpdateProduct = () => {
                 required
                 onChange={(e) => setPrice(e.target.value)}
                 value={price}
+              />
+            </div>
+            <div>
+            <AttachMoneyIcon />
+              <input
+                type="number"
+                placeholder="Discount"
+                required
+                onChange={(e) => setDiscount(e.target.value)}
+                value={discount}
               />
             </div>
 

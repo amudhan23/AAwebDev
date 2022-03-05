@@ -1,0 +1,121 @@
+.orderDetailsPage {
+    background-color: white;
+  }
+  
+  .orderDetailsContainer > h1 {
+    font: 300 2vmax "Jost";
+    margin: 4vmax 0;
+    color: rgba(179, 57, 152, 0.911);
+  }
+  
+  .orderDetailsContainer {
+    padding: 5vmax;
+    padding-bottom: 0%;
+  }
+  
+  .orderDetailsContainer > p {
+    font: 400 1.8vmax "Jost";
+  }
+  
+  .orderDetailsContainerBox,
+  .orderDetailsCartItemsContainer {
+    margin: 2vmax;
+  }
+  
+  .orderDetailsContainerBox > div {
+    display: flex;
+    margin: 1vmax 0;
+  }
+  
+  .orderDetailsContainerBox > div > p {
+    font: 400 1.5vmax "Jost";
+    color: black;
+  }
+  .orderDetailsContainerBox > div > span {
+    margin: 0 1vmax;
+    font: 400 1.3vmax "Jost";
+    color: #121212;
+  }
+  
+  .orderDetailsCartItems > p {
+    font: 400 1.8vmax "Jost";
+  }
+  
+  .orderDetailsCartItems {
+    padding: 2vmax 5vmax;
+    border-top: 1px solid rgba(0, 0, 0, 0.164);
+  }
+  
+  .orderDetailsCartItemsContainer > div {
+    display: flex;
+    font: 400 1vmax "Jost";
+    align-items: center;
+    margin: 2vmax 0;
+  }
+  
+  .orderDetailsCartItemsContainer > div > img {
+    width: 3vmax;
+  }
+  
+  .orderDetailsCartItemsContainer > div > a {
+    color: #121212;
+    margin: 0 2vmax;
+    width: 60%;
+    text-decoration: none;
+  }
+  
+  .orderDetailsCartItemsContainer > div > span {
+    font: 500 1vmax "Jost";
+    color: #5e5e5e;
+  }
+  
+
+  .submitDialog {
+    display: flex;
+    flex-direction: column;
+  }
+  .submitDialogTextArea {
+    border: 1px solid rgba(0, 0, 0, 0.082);
+    margin: 1vmax 0;
+    outline: none;
+    padding: 1rem;
+    font: 300 1rem "Roboto";
+  }
+  @media screen and (max-width: 600px) {
+    .orderDetailsContainer > p {
+      font: 400 6vw "Jost";
+    }
+  
+    .orderDetailsContainerBox > div {
+      margin: 6vw 0;
+    }
+  
+    .orderDetailsContainerBox > div > p {
+      font: 400 4vw "Jost";
+    }
+    .orderDetailsContainerBox > div > span {
+      font: 100 4vw "Jost";
+    }
+  
+    .orderDetailsCartItems > p {
+      font: 400 6vw "Jost";
+    }
+  
+    .orderDetailsCartItemsContainer > div {
+      font: 400 4vw "Jost";
+      margin: 4vw 0;
+    }
+  
+    .orderDetailsCartItemsContainer > div > img {
+      width: 10vw;
+    }
+  
+    .orderDetailsCartItemsContainer > div > a {
+      margin: 2vw;
+      width: 30%;
+    }
+  
+    .orderDetailsCartItemsContainer > div > span {
+      font: 100 4vw "Jost";
+    }
+  }

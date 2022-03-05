@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { addItemsToCart, removeItemsFromCart } from "../../actions/cartAction";
 import { Typography } from "@material-ui/core";
 import RemoveShoppingCartIcon from "@material-ui/icons/RemoveShoppingCart";
-import { Link, useNavigate} from "react-router-dom";
+import { Link, useNavigate,createSearchParams} from "react-router-dom";
 import { useAlert } from "react-alert";
 
 const Cart = () => {
@@ -39,7 +39,12 @@ const Cart = () => {
   };
 
   const checkoutHandler = () => {
-    navigate("/login");
+    navigate({
+      pathname: "/login",
+      search: `?${createSearchParams({
+          redirect: "shipping"
+      })}`
+  });
   };
 
 

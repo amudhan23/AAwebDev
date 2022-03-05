@@ -1,43 +1,33 @@
-import React, { Fragment, useState ,useEffect} from 'react'
-import"./Search.css";
-import{FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faSearch} from '@fortawesome/free-solid-svg-icons'
-import { getAdminProduct } from "../../actions/productAction";
-import { useDispatch, useSelector } from 'react-redux';
+import React, { useState, Fragment } from "react";
+import { useNavigate } from "react-router-dom";
+import MetaData from "../layout/MetaData";
+import "./Search.css";
 
+const Search = ( ) => {
+  const [keyword, setKeyword] = useState("");
+const navigate = useNavigate();
+  const searchSubmitHandler = (e) => {
+    e.preventDefault();
+    if (keyword.trim()) {
+    navigate(`/products/${keyword}`);
+    } else {
+      navigate("/products");
+    }
+  };
 
-const Search = ({history}) => {
-
-    const dispatch = useDispatch();
-
-const [keyword,setKeyword] = useState("");
-
-const { products } = useSelector((state) => state.products);
-console.log(products);
-useEffect(() => {
-    dispatch(getAdminProduct());
-    // dispatch(getAllOrders());
-    // dispatch(getAllUsers());
-  }, [dispatch]);
-const searchSubmitHandler = (e) => {
-e.preventDefault();
-if(keyword.trim()){
-    history.pushState(`/products/${keyword}`);
-}else{
-    history.pushState("/products");
-}
+  return (
+    <Fragment>
+      <MetaData title="Search A Product -- ECOMMERCE" />
+      <form className="searchBox" onSubmit={searchSubmitHandler}>
+        <input
+          type="text"
+          placeholder="Search a Product ..."
+          onChange={(e) => setKeyword(e.target.value)}
+        />
+        <input type="submit" value="Search" />
+      </form>
+    </Fragment>
+  );
 };
-
-    return (
-        <Fragment>
-            <form className='searchBox' onSubmit={searchSubmitHandler}>
-                <input type="text"
-                placeholder="What are you looking for..."
-                onchange={(e)=> setKeyword(e.target.value)}/>
-                <input type="submit" value="Search"/>
-            </form>
-        </Fragment>
-    )
-}
 
 export default Search;

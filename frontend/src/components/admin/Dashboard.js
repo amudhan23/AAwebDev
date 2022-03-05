@@ -8,6 +8,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { getAdminProduct } from "../../actions/productAction";
 import { getAllUsers } from "../../actions/userAction.js";
 import MetaData from "../layout/MetaData";
+import { getAllOrders } from "../../actions/orderAction.js";
+
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -21,7 +23,7 @@ import {
   } from 'chart.js'
 
 
-  import { Chart } from 'react-chartjs-2'
+  // import { Chart } from 'react-chartjs-2'
   
   ChartJS.register(
     CategoryScale,
@@ -35,7 +37,6 @@ import {
   )
 
 
-// // import { getAllOrders } from "../../actions/orderAction.js";
 
 
 const Dashboard = () => {
@@ -43,7 +44,7 @@ const Dashboard = () => {
 
   const { products } = useSelector((state) => state.products);
 
-// //   const { orders } = useSelector((state) => state.allOrders);
+  const { orders } = useSelector((state) => state.allOrders);
 
   const { users } = useSelector((state) => state.allUsers);
 
@@ -59,15 +60,15 @@ const Dashboard = () => {
 
   useEffect(() => {
     dispatch(getAdminProduct());
-    // dispatch(getAllOrders());
+    dispatch(getAllOrders());
     dispatch(getAllUsers());
   }, [dispatch]);
 
-//   let totalAmount = 0;
-//   orders &&
-//     orders.forEach((item) => {
-//       totalAmount += item.totalPrice;
-//     });
+  let totalAmount = 0;
+  orders &&
+    orders.forEach((item) => {
+      totalAmount += item.totalPrice;
+    });
 
   const lineState = {
     labels: ["Initial Amount", "Amount Earned"],
@@ -76,7 +77,7 @@ const Dashboard = () => {
         label: "TOTAL AMOUNT",
         backgroundColor: ["tomato"],
         hoverBackgroundColor: ["rgb(197, 72, 49)"],
-        data: [0, 4000],
+        data: [0, totalAmount],
       },
     ],
   };
@@ -94,7 +95,7 @@ const Dashboard = () => {
 
   return (
     <div className="dashboard">
-   
+      <MetaData title="Dashboard - Admin Panel" />
       <Sidebar />
 
       <div className="dashboardContainer">
@@ -103,7 +104,7 @@ const Dashboard = () => {
         <div className="dashboardSummary">
           <div>
             <p>
-              Total Amount <br /> ₹2000
+              Total Amount <br /> ₹{totalAmount}
             </p>
           </div>
           <div className="dashboardSummaryBox2">
@@ -113,7 +114,7 @@ const Dashboard = () => {
             </Link>
             <Link to="/admin/orders">
               <p>Orders</p>
-              <p>5</p>
+              <p>{orders && orders.length}</p>
             </Link>
             <Link to="/admin/users">
               <p>Users</p>

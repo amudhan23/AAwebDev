@@ -31,8 +31,25 @@
   }
  
  
- 
-  
+ .price{
+   text-decoration: line-through;
+   font-size: 1.3rem;
+ }
+#dis-price{
+  display: inline-flex;
+  margin-right: 5px;
+}
+
+.dis{
+  display: inline-flex;
+  font-size: 1.4rem;
+}
+ .none{
+   display:none;
+ }
+ .show{
+   color: green;
+ }
   .detailsBlock-1 > h2 {
     color: rgb(54, 54, 54);
     font: 600 2.5vmax "Jost";

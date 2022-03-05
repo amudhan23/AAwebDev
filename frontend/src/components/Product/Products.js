@@ -11,6 +11,7 @@ import{FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faFilter} from '@fortawesome/free-solid-svg-icons'
 import{useAlert} from "react-alert";
 import MetaData from "../layout/MetaData";
+import { useParams } from "react-router-dom";
 
 const categories = [
   "Electronics",
@@ -30,6 +31,8 @@ const Products = () => {
   const [category, setCategory] = useState("");
   const [price, setPrice] = useState([0, 250000]);
 
+
+  const {keyword} = useParams();
   const {
     products,
     loading,
@@ -38,6 +41,8 @@ const Products = () => {
     resultPerPage,
     filteredProductsCount,
   } = useSelector((state) => state.products);
+
+
 
   const setCurrentPageNo = (e) => {
     setCurrentPage(e);
@@ -51,8 +56,8 @@ const Products = () => {
       alert.error(error);
       dispatch(clearErrors());
     }
-    dispatch(getProduct(currentPage, price,category));
-  }, [dispatch, currentPage, price,category, alert, error]);
+    dispatch(getProduct(currentPage, price,category, keyword));
+  }, [dispatch, currentPage, price,category, alert, error, keyword]);
 
 let count = filteredProductsCount;
 
